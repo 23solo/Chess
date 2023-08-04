@@ -1,0 +1,16 @@
+#!/bin/sh
+# Deletes files created by c++ compiler
+RED='\033[0;31m'
+branch_name=$(git symbolic-ref -q HEAD | cut -d"/" -f 3)
+if [[ "$branch_name" == "master" ]]; then
+  echo "${RED}Cannot commit on master !!! "
+  exit 1
+fi;
+for file in */*; do
+    if [[ ! "$file" == *.cpp ]]; then 
+        if [[ -f "$file.cpp" ]] ; then
+            rm "$file"
+        fi;
+    fi; 
+done
+
