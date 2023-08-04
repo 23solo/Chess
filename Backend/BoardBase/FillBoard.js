@@ -1,4 +1,4 @@
-const config = require("./chessConfig.json");
+const config = require("./../chessConfig.json");
 
 const placePawns = (board, whitePawn, blackPawn) => {
   for (let j = 0; j < config.ChessBoardSize; j++) {

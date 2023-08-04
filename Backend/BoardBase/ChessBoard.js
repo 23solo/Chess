@@ -30,5 +30,9 @@ class ChessBoard {
   placePiece(piece, row, col) {
     this.grid[row][col] = piece;
   }
+
+  getPiece(row, col) {
+    return this.grid[row][col];
+  }
 }
 module.exports = { ChessBoard };
